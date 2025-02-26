@@ -1,0 +1,21 @@
+body {
+  background-color: #1b1b1b;
+}
+
+h1 {
+  color: white;
+}
+
+.body-flex {
+  display: flex;
+  margin: 2rem;
+  flex-direction: column;
+  width: 100vh;
+  gap: 3em;
+}
+
+.baslik {
+  color: white !important;
+}
+
+

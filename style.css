@@ -1,0 +1,244 @@
+/* Genel stiller */
+body {
+  background-color: #080303;
+  height: 100%; /* Sayfa yüksekliğini 100% yap */
+  width: 100%;  /* Sayfa genişliğini 100% yap */
+  margin: 0;    /* Varsayılan margin'i sıfırla */
+  padding: 0; 
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(-45deg, #151519, #000000, #18181c, #000000);
+	background-size: 400% 400%;
+	animation: gradient 10s ease infinite;
+	height: 100vh;
+}
+
+
+
+/* 992px altındaki ekranlar için */
+@media screen and (max-width: 992px) {
+
+  .main-grid {
+    display: grid;
+    margin:2em;
+    grid-template-columns: 6fr;
+    grid-template-rows: auto;
+    background-image: url('./assets/sky.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 2em;
+    gap: 1em;
+    height: 50em;
+    max-width: 80em;
+  }
+
+  .left-side {
+    grid-column: 1 / -1; /* Tam genişlik kaplasın */
+    grid-row: 1;
+  }
+
+  .right-side {
+    display: none;
+  }
+
+}
+
+/* 600px altındaki ekranlar için */
+@media screen and (max-width: 600px) {
+
+  .main-grid {
+    display: grid;
+    margin: 2em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background-image: url('./assets/sky.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 2em;
+    gap: 1em;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .left-side {
+    grid-column: 1 / -1; /* Tam genişlik kaplasın */
+    grid-row: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+  }
+
+  .right-side {
+    display: none;
+  }
+
+  .header {
+    gap: 1em;
+    grid-column: 1 ;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-sag {
+    flex-direction: column;
+    margin: 0;
+    margin-right: 0px;
+  }
+
+  .header-sag > .buton {
+    padding: 3em;
+  }
+
+
+  .vault > .buton {
+    margin: 0;
+    padding: 3em;
+  }
+
+
+
+  .mert {
+    grid-row: 4;
+    grid-column: 1;
+  }
+
+  .buton {
+    width: 100%; /* Butonları daha geniş yap */
+    max-width: 250px;
+    margin: 0 auto;
+    padding: 0.8em;
+    font-size: 1em;
+  }
+
+ 
+}
+
+/* Genel main-grid stili */
+.main-grid {
+  display: grid;
+  margin-top: 10vh;
+  grid-template-columns: repeat(auto-fit, 1fr);
+  grid-template-rows: repeat(auto-fit, 1fr);
+  background-color: #0d0d0a;
+  border-radius: 2em;
+  gap: 1em;
+  height: 50em;
+  max-width: 80em;
+}
+
+/* Left-side stilleri */
+.left-side {
+  display: grid;
+  grid-column: 1 / 8;
+  grid-row: 1 / 12;
+  padding: 2em;
+  gap: 10px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(11, 1fr);
+  height: 48em;
+  margin: 1em;
+}
+
+.right-side {
+  grid-column: 8 / 13;
+  grid-row: 1 / 12;
+  padding: 2em;
+  height: 48em;
+}
+
+.right-side img {
+  max-width: 100%;  /* Resmi genişliğe sığdırır */
+  height: 46em;   
+  object-fit: cover; 
+  border-radius: 3em;
+  margin: 0px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1 / 13;
+}
+
+.header-sag {
+  display: flex;
+  gap: 1em;
+  margin-right: 20px;
+}
+
+.vault {
+  display: flex;
+  gap: 1em;
+  margin-left: 1em;
+}
+
+.buton {
+  padding: 1em;
+  font-size: 1.1em;
+  background-color: #0d0d0a;
+  color: whitesmoke;
+  border: solid rgba(245, 245, 245, 0.155) 1px;
+  border-radius: 1em;
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font: weight 700px;
+  font-size: 1.5rem;
+  font-style: normal;
+  cursor: pointer;
+  
+}
+
+.buton:hover {
+  color: white;
+  background-color: #23231b;
+}
+
+.mid-right {
+  grid-column: 8 / 13;
+  grid-row: 5 / 8;
+}
+
+.mert {
+  grid-column: 0 / 6;
+  grid-row: 11 / 12;
+  display: flex;
+  justify-content: center;
+  margin-left: 1.5rem;
+}
+
+.mert > h1 {
+  color: #fff9f9;
+  font-size: 3em;
+  font-family: "Smooch Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.explore {
+  grid-column: 10 / 13;
+  grid-row: 11 / 12;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+a {
+  color: inherit; /* Varsayılan metin rengini kullan */
+  text-decoration: none; /* Alt çizgiyi kaldır */
+}
+
+
+.navbar-home {
+  width: 100%;
+}

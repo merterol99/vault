@@ -1,0 +1,78 @@
+body {
+	background: black;
+}
+* {
+	padding: 0;
+	margin: 0;
+}
+h4 {
+	position: absolute;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: white;
+	text-wrap: nowrap;
+	text-align: center;
+}
+.center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+/* div with bg image */
+.outer {
+	background-image: url("https://picsum.photos/1600/1600");
+	background-repeat: no-repeat;
+	width: 80%;
+	max-width: 1600px;
+	max-height: 1600px;
+	height: 80%;
+	overflow: hidden; /* hide the parts of the marquee outside of the container */
+}
+
+/* Container for the marquee effect */
+/*The SHADOW has to be set on the CONTAINER, not the text!!*/
+/* container gets animated AND applies the dropshadow! */
+.marquee-container {
+	position: absolute;
+	top: 50vh;
+	transform: translateY(-50%);
+	width: fit-content;
+
+	/* animation settings: name, duration, easing, repeat */
+	animation: marquee 20s linear infinite;
+	z-index: 1000;
+	filter: drop-shadow(8px 4px 4px rgba(0, 0, 0, 0.7));
+}
+.marquee-container > p {
+	bottom: 0;
+	margin-left: 20px;
+	/* filter: none; WHY does it still have a drop-shadow */
+}
+
+/* Clipping Text */
+.text {
+	white-space: nowrap;
+	font-size: 10em;
+	line-height: 0.8;
+	-webkit-text-fill-color: transparent;
+	/* here loading random image with the needed dimensions */
+	background-image: url("https://picsum.photos/1600/130");
+	background-repeat: no-repeat;
+	-webkit-background-clip: text;
+	/* make text transparent to show backround */
+	-webkit-text-fill-color: transparent;
+}
+
+/* animation */
+@keyframes marquee {
+	0% {
+		left: 100%;
+	}
+
+	100% {
+		left: -100%;
+	}
+}
